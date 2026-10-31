@@ -5,21 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fantasea</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+<div class="sea" aria-hidden="true">
+  <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+  <svg class="bubbles" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <circle class="bub" cx="12" cy="110" r=".5"/><circle class="bub" cx="31" cy="110" r=".35"/>
+    <circle class="bub" cx="58" cy="110" r=".6"/><circle class="bub" cx="77" cy="110" r=".4"/>
+    <circle class="bub" cx="91" cy="110" r=".3"/><circle class="bub" cx="45" cy="110" r=".45"/>
+  </svg>
+</div>
+
 <header class="top">
-  <a class="brand" href="#/team"><span class="dot"></span>fantasea</a>
-  <nav class="tabs">
+  <a class="brand" href="#/team" aria-label="Fantasea home">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+      <circle cx="13" cy="13" r="12" stroke="var(--glow)" stroke-width="1.5" opacity=".5"/>
+      <path d="M4 15c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 3-2 3-2" stroke="var(--glow)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M8 9.5l3.5 5h3L18 9.5" stroke="var(--ice)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>fantasea</span>
+  </a>
+  <nav class="tabs" id="tabs">
+    <span class="ind" id="ind"></span>
     <a href="#/team" data-route="team">Team</a>
     <a href="#/matchup" data-route="matchup">Matchup</a>
     <a href="#/fa" data-route="fa">Free agents</a>
   </nav>
   <div class="meta" id="meta"></div>
 </header>
+
 <main id="view" class="view"></main>
-<footer class="foot">Fantasy data provided by Yahoo Fantasy</footer>
+
+<footer class="foot">
+  <svg class="wave" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 20 Q 150 0 300 20 T 600 20 T 900 20 T 1200 20 V40 H0 Z"/>
+  </svg>
+  <span>Fantasy data provided by Yahoo Fantasy</span>
+</footer>
 <script type="module" src="/static/app.js"></script>
 </body>
 </html>

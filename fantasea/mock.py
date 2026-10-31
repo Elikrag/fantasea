@@ -28,6 +28,7 @@ def _skater_line(pos, name, team, i, status="OK", slot=None):
         "id": f"p{i}", "pos": slot or pos, "elig": [pos], "name": name, "team": team,
         "tonight": f"vs {random.choice(OPP)}" if tonight else None,
         "gp_week": random.randint(2, 4), "status": status,
+        "trend": [random.choice([0, 0, 1, 1, 2, 3, 4]) for _ in range(6)],
         "stats": {"G": random.randint(0, 3), "A": random.randint(0, 4), "P": 0,
                   "+/-": random.randint(-3, 5), "PPP": random.randint(0, 3),
                   "SOG": random.randint(4, 16), "HIT": random.randint(0, 9)},
@@ -41,6 +42,7 @@ def _goalie_line(pos, name, team, i, slot=None):
         "tonight": f"vs {random.choice(OPP)}" if tonight else None,
         "gp_week": random.randint(1, 3), "status": "OK",
         "start": random.choice(["Confirmed", "Probable", "Unlikely"]) if tonight else None,
+        "trend": [random.choice([0, 1, 2, 3, 4, 5]) for _ in range(6)],
         "stats": {"W": random.randint(0, 2), "GAA": round(random.uniform(1.9, 3.4), 2),
                   "SV%": round(random.uniform(0.885, 0.940), 3), "SO": random.randint(0, 1)},
     }
