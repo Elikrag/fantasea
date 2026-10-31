@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "fantasea", "runtimeExecutable": "uv", "runtimeArgs": ["run", "uvicorn", "fantasea.server:app", "--reload", "--port", "8000"], "port": 8000 }
+  ]
+}
