@@ -12,7 +12,8 @@ TOKEN_FILE = ROOT / "oauth2.json"
 
 def get_session() -> OAuth2:
     load_dotenv(ROOT / ".env")
-    key, secret = os.getenv("YAHOO_CLIENT_ID"), os.getenv("YAHOO_CLIENT_SECRET")
+    key = os.getenv("YAHOO_CLIENT_ID") or os.getenv("CLIENT_ID")
+    secret = os.getenv("YAHOO_CLIENT_SECRET") or os.getenv("CLIENT_SECRET")
     if not key or not secret:
         raise SystemExit("Set YAHOO_CLIENT_ID and YAHOO_CLIENT_SECRET in .env (see .env.example)")
     if not TOKEN_FILE.exists():
